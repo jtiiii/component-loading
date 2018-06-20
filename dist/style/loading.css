@@ -1,0 +1,83 @@
+.loading{
+    background: url("../images/loading.png") no-repeat;
+    background-size:  16px 16px;
+    display: none;
+}
+.loading-begin{
+    display: inline-block;
+    animation: loading-start 0.3s ease;
+}
+.loading-run{
+    display: inline-block;
+    animation: loading-active 1s ease-out infinite;
+    animation-delay: 300ms;
+    background-position: 2px 2px;
+    width: 20px;
+    height: 20px;
+}
+.loading-end{
+    display: inline-block;
+    animation: loading-stop 0.3s ease-out;
+}
+
+@keyframes loading-start {
+    0% {
+        background-size: 0px 0px;
+        background-position: 10px 10px;
+        width: 0px;
+        height: 0px;
+    }
+    25%{
+        background-size: 0px 0px;
+        background-position: 10px 10px;
+        width: 20px;
+        height: 20px;
+    }
+    50%{
+        background-size: 20px 20px;
+        background-position: 0px 0px;
+    }
+    100%{
+
+        background-size: 16px 16px;
+        background-position: 2px 2px;
+        width: 20px;
+        height: 20px;
+    }
+}
+@keyframes loading-active {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes loading-stop {
+    0%{
+        background-size: 16px 16px;
+        background-position: 2px 2px;
+        width: 20px;
+        height: 20px;
+    }
+    50%{
+        background-size: 20px 20px;
+        background-position: 0px 0px;
+        width: 20px;
+        height: 20px;
+
+    }
+    75%{
+        background-size: 0px 0px;
+        background-position: 10px 10px;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        background-size: 0px 0px;
+        background-position: 10px 10px;
+        width: 0px;
+        height: 0px;
+    }
+
+}

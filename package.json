@@ -4,6 +4,7 @@
   "description": "前端loading动画组件",
   "main": "src/scripts/loading.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,6 +12,7 @@
     "url": "git+https://github.com/jtiiii/component-loading.git"
   },
   "keywords": [
+    "javascript",
     "html",
     "component",
     "loading"
@@ -20,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/jtiiii/component-loading/issues"
   },
-  "homepage": "https://github.com/jtiiii/component-loading#readme"
+  "homepage": "https://github.com/jtiiii/component-loading#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "jquery": "^3.3.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8"
+  }
 }
