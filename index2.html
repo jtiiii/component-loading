@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>loading演示</title>
-        <link type="text/css" rel="stylesheet" href="dist/style/loading.css"/>
+        <title>loading演示2</title>
     </head>
     <body>
         <span id="loading"></span>
         <br/>
         <button type="button" onclick="show()">start</button>&nbsp;<button type="button" onclick="hide()">stop</button>
     </body>
-    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="dist/js/loading.min.js"></script>
+    <script type="text/javascript" src="build/loading.js"></script>
     <script type="text/javascript">
         let loading = new Loading({el:'#loading'});
-
         function show(){
             loading.show();
         }
