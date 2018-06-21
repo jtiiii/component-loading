@@ -12,14 +12,14 @@
 
     if(typeof module === 'object' && typeof module.exports === 'object' ){
         //当为commonjs（node）的环境时候
-        module.exports = factory();
+        module.exports = factory(global,true);
     }else{
         //不然为浏览器环境下
         factory(global);
     }
-})(typeof window !== 'undefined' ? window : this,function(window){
+})(typeof window !== 'undefined' ? window : this,function(window,isGlobal){
     //如果为浏览器环境下，则window === global
-    let Loading = function({ el }){
+    let Loading = function(el){
         this.el = el;
         this.$dom().addClass('loading');
         //是否是播放状态
@@ -27,7 +27,8 @@
         //loading动画执行栈堆，解决异步大量访问造成class混乱的问题
         this.playStack = [];
     };
-    Loading.setJQuery = $ => Loading.$ = $;
+    let jq = undefined;
+    Loading.setJQuery = $ => jq = $;
     Loading.prototype = {
         constructor: Loading,
         /**
@@ -65,7 +66,10 @@
             setTimeout( this._play() , 10);
         },
         $dom: function(){
-            return Loading.$(this.el);
+            if(!jq){
+                throw new Error("The jquery is required! You need use 'Loading.setJQuery()' first or global/window has jquery object -- '$'.");
+            }
+            return jq(this.el);
         },
         /**
          * 开始播放动画
@@ -94,12 +98,10 @@
             });
         }
     };
-    if(window){
+    if(!isGlobal){
         window.Loading = Loading;
-        Loading.setJQuery(window.$);
-    }else{
-        Loading.setJQuery(require('jquery'));
     }
+    Loading.setJQuery(window.$);
 
     return Loading;
 });

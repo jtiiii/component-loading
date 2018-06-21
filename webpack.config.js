@@ -2,9 +2,9 @@ module.exports = {
     devtool: "source-map",
     entry: "./src/scripts/main.js",
     output: {
-        path: __dirname + "/build",
-        publicPath: "/build",
-        filename: "loading.js"
+        path: __dirname + "/dist/scripts",
+        publicPath: "/dist",
+        filename: "loading-bundle.js"
     },
     module: {
         rules:[
