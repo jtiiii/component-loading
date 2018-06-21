@@ -6,3 +6,6 @@ build
 
 #引入的其他js文件
 node_modules
+
+#macOS文件
+*.DS_Store
