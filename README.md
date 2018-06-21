@@ -25,7 +25,7 @@ loading.show();
 setTimeout( loading.hide(), 10000);
 ```
 
-##1.1.0
+## 1.1.0
 
 [下载地址(download)](https://github.com/jtiiii/component-loading/releases/download/untagged-0ee4ae58228b49e66be9/loading-1.1.0RLS.zip)
 43.9 KB loading-1.1.0RLS.zip
@@ -34,7 +34,7 @@ setTimeout( loading.hide(), 10000);
 + 增加Loading.setJQuery方法
 + 增加loading.bundle.js文件。该文件由webpack打包过，直接附带image和css
 
-##1.0.0
+## 1.0.0
 
 [下载地址(download)](https://github.com/jtiiii/component-loading/releases/download/v1.0.0RLS/loading-1.0.0RLS.zip)
 9.89 KB loading-1.0.0RLS.zip
